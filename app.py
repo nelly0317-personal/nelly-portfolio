@@ -78,3 +78,118 @@ with col_exp4:
     st.write("""
     * **社群內容策略**：規劃與執行車商 (NISSAN) 等品牌社群行銷活動。
     * **視覺創意統籌**：負責平面拍攝需求規劃，確保視覺產出符合品牌調性。
+    * **病毒式擴散**：設計心理測驗互動，曾創造高分享率與聲量。
+    """)
+
+st.markdown("---")
+
+# 2. 精選專案作品 (Project Highlights)
+st.header("🏆 精選專案 Case Studies")
+st.write("以下精選幾個具代表性的操作案例，涵蓋 LINE 互動、OMO 整合與銷售導購。")
+
+# 定義一個函數來顯示專案，這樣程式碼比較整潔
+def show_project(title, tags, description, metrics_dict, image_path=None):
+    with st.container():
+        st.subheader(f"📌 {title}")
+        st.write(tags)
+        
+        c1, c2 = st.columns([1.5, 1]) # 左邊寬一點放圖或詳細文，右邊放數據
+        
+        with c1:
+            st.markdown(f"**專案內容：**\n{description}")
+            if image_path:
+                try:
+                    # 嘗試讀取圖片，如果找不到就顯示提示
+                    st.image(image_path, caption=f"{title} 視覺呈現", use_column_width=True)
+                except:
+                    st.warning(f"請放入圖片檔案: {image_path}")
+            else:
+                st.info("💡 (此處可放入專案截圖，請將圖片上傳至資料夾並命名)")
+
+        with c2:
+            st.markdown('<div class="metric-card"><b>📊 專案成效</b></div>', unsafe_allow_html=True)
+            for k, v in metrics_dict.items():
+                st.metric(label=k, value=v)
+        
+        st.divider()
+
+# --- 專案 1: CAFE!N x DUREX ---
+show_project(
+    title="CAFE!N x DUREX - LINE MGM Campaign",
+    tags="`LINE行銷` `跨界聯名` `MGM機制`",
+    description="""
+    藉由聯名話題及獎項誘因帶動 LINE 新好友數。透過精準的誘因設計（MGM），
+    鼓勵使用者分享給好友。
+    """,
+    metrics_dict={
+        "新好友增加": "+9,716 人",
+        "活動參與人數": "11,000+ 人",
+        "成效": "品牌近期最佳操作"
+    },
+    image_path="project1.png" # 妳之後要把截圖命名為 project1.png
+)
+
+# --- 專案 2: NEW BALANCE CNY ---
+show_project(
+    title="NEW BALANCE CNY - 穿上NB「翻」走春趣",
+    tags="`OMO整合` `節慶行銷` `互動遊戲`",
+    description="""
+    結合農曆年節氣氛，發展「翻牌」互動遊戲。運用 OMO 操作，
+    除了線上賺取購物金，還能引導至門市印製春聯，成功串聯線上線下流量。
+    """,
+    metrics_dict={
+        "遊戲參與人數": "61,000+ 人",
+        "新好友增加": "+28,000+ 人",
+        "轉換": "高購物金領取率"
+    },
+    image_path="project2.png"
+)
+
+# --- 專案 3: THE NORTH FACE ---
+show_project(
+    title="THE NORTH FACE - AI 撩山林",
+    tags="`AI科技應用` `聊天機器人` `品牌互動`",
+    description="""
+    融合 AI 科技，發展「與山林對話」的概念。
+    透過線上聊天室讓使用者與「山神」對話，呼籲民眾回歸山林，提升品牌好感度。
+    """,
+    metrics_dict={
+        "新好友增加": "+36,000+ 人",
+        "活動參與人數": "33,000+ 人",
+        "互動親密度": "100% 達成"
+    },
+    image_path="project3.png"
+)
+
+# --- 專案 4: NESTLE KLIM CNY ---
+show_project(
+    title="NESTLE KLIM CNY - 登錄發票雙重抽",
+    tags="`銷售導購` `發票登錄` `促銷活動`",
+    description="""
+    藉由「立即抽」與加碼「事後抽萬元大獎」雙重機制，
+    強化消費者購買指定商品的意願，促進多單品項購買（Basket Size）。
+    """,
+    metrics_dict={
+        "平均登錄發票": "2.1 次/人",
+        "獎項": "iPhone / 萬元家電",
+    },
+    image_path="project4.png"
+)
+
+# --- 專案 5: NISSAN X-TRAIL ---
+show_project(
+    title="NISSAN X-TRAIL - 心理測驗病毒行銷",
+    tags="`社群擴散` `心理測驗` `產品上市`",
+    description="""
+    藉由心理測驗結合車款 USP (獨特賣點)，加上分享誘因，
+    促進用戶主動分享給好友，創造聲量並間接帶來預約試乘率。
+    """,
+    metrics_dict={
+        "分享率": "96%",
+        "參加人數": "5,847 人",
+    },
+    image_path="project5.png"
+)
+
+# --- 頁尾 ---
+st.write("© 2026 Nelly Chen. Portfolio created with Python & Streamlit.")
