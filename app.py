@@ -80,8 +80,7 @@ col_hero1, col_hero2 = st.columns([2, 1])
 with col_hero1:
     st.title("Nelly Chen.")
     st.markdown("### Digital Marketing Specialist")
-    st.write("我是陳俞寧，一位數據驅動創意的資深行銷企劃。")
-    st.write("擅長將冷冰冰的數據，轉化為有溫度的社群互動與商業價值。")
+    st.write("我是陳俞寧，具備5年數位行銷經驗。")
     
     # 社交按鈕區
     st.markdown("""
@@ -104,7 +103,7 @@ with c1:
 with c2:
     st.markdown('<div class="timeline-content">', unsafe_allow_html=True)
     st.subheader("Senior Account Executive")
-    [cite_start]st.markdown("**網路基因資訊有限公司** [cite: 16]")
+    [cite_start]st.markdown("**網路基因公司** [cite: 16]")
     st.markdown("""
     * **LINE 行銷專家**：主導規劃與執行 LINE 行銷與 IMC 整合活動，熟悉 API 串接與數據追蹤。
     * **品牌比稿提案**：參與航空、酒商、運動品牌比稿，具備從 0 到 1 的策略規劃能力。
